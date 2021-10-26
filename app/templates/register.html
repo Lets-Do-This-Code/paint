@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- creates a container which is responsive -->
+<!-- pt-3 brings the container away from the margin just a little bit -->
+<div class="container-fluid pt-3">
+    <!-- heading for page -->
+    <h1>Register</h1>
+
+    <!-- form starts here -->
+    <form action="" method="post" novalidate>
+
+        <!-- CSRF protection ... hidden tag + secret key = protection within flask against unauthorised cyber access -->
+        {{ form.hidden_tag() }}
+        
+        <p>Please add your details:
+        <p>
+        <div class="form-group">
+            <!-- input the first name -->
+            {{ form.fname.label }}
+                <br>
+
+            {{ form.fname(size=32) }}
+                <br>
+
+            <!-- if an error is generated from the validation on form -->
+            {% for error in form.fname.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+                <br>
+
+            <!-- input the surname -->
+            {{ form.surname.label }}
+                <p>
+            {{ form.surname(size=32) }}
+                <br><br>
+
+            <!-- errors are communicated to user -->
+            {% for error in form.fname.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+                <br>
+
+        </div>
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+
+{% endblock %}

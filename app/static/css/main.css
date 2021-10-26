@@ -1,0 +1,66 @@
+ 
+/*    @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap'); */
+    body{
+        font-family: Helvetica;
+    }
+
+    html{
+       background-color:#ADD8E6; 
+    }
+    h1{
+        font-size: 40px;
+        font-family: 'Pacifico';
+        color: darkblue;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+    th{
+        background-color: #333;
+        color: white;
+    }
+    #ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: darkblue;
+        }
+
+    #li {
+        float: left;
+        }
+
+    #lia {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    /* Change the link color to #111 (black) on hover */
+    #li a:hover {
+        background-color: #111;
+    }
+    button {
+        font-size: 20px;
+        position: absolute; left: 800px; top: 150px;
+    }
+    .footer {
+        height: 55px;
+        font-size: 15px;
+        position: fixed;
+        bottom: 5px;
+        width: 98.5%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        }
+    .footer p{
+        font-size: 10px;
+    }

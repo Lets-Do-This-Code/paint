@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Orders</h1>
+    
+    <!--<button type="button" onclick="window.location.href='/index'">A button</button>-->
+    <br>
+<div class="container-fluid pt-3">
+    <form action="" method="post">
+        <div class="form-group">
+            <!-- hidden_tag() creates a hidden fiel that includes a token that is used to protect against CSRF attacks.  Hidden tag + Secret Key = protected -->
+            
+            {{ form.hidden_tag() }}
+
+            <p>Please add your painting requirements:
+            <p class="text-dark">
+                {{ form.width.label }} {{ form.width(size=32) }}<br><br>
+                {{ form.height.label }} {{ form.height(size=32) }}<br><br>
+        </div>
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    <div>
+</div>
+<p>
+
+
+    
+    <br>
+{% endblock %}

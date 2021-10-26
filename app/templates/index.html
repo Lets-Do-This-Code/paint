@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Anything from here onwards will be displayed 
+	as WELL AS the base.html -->
+
+<!-- creates a container which is responsive -->
+<!-- pt-3 brings the container away from the margin just a little bit -->
+<div class="container-fluid pt-3">
+
+    <!-- heading for page -->
+    <h1>Home Page</h1>
+</div>
+<p>Trying some text </p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Byron</td>
+      <td>Grioli</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Tobey</td>
+      <td>Grioli</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Cassandra</td>
+      <td>Grioli</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

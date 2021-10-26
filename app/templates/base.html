@@ -1,0 +1,69 @@
+ <html>
+
+    <head>
+        <!-- Variable added to personalise each page -->
+        <!-- if a page has a title, use that -->
+        {% if title %}
+        <title>{{ title }} - Flask Try</title>
+        {% else %}
+        <title>Welcome to my first Flask</title>
+        {% endif %}
+
+
+        <!-- link to your css stylesheet -->
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/main.css') }}">
+
+         <!-- Latest bootstrap compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+        
+    </head>
+
+
+    <body>
+        <!-- nav bar -->
+        <div>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="">
+            <img src="images/logo.jpg" alt="Logo" style="width:40px">
+            </a>
+            <ul id="ul">
+                <li id="li"><a id="lia" href='index'>Home</a></li>
+                <li id="li"><a id="lia" href="/register">Register Here</a></li>
+                <li id="li"><a id="lia" href="/orders">Order Here</a></li>
+            </ul>
+        </div>
+
+        <!-- start of web page body here -->
+
+        {% block content %}
+            <!-- content specific to each HTML page in your website gets placed here -->
+        {% endblock %}
+        
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <hr>
+        <ul>
+            {% for message in messages %}
+            <li>ALERT: {{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <div class="footer">
+            <p>Designed and Developed for Marymount College.</p>
+            <p>Copyright © 2019 Daniel Cousins. </p>
+            <p>Adapted by Mrs M. All Rights Reserved.</p>
+        </div>
+    </body>
+</html>
+
